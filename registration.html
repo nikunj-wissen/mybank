@@ -1,7 +1,9 @@
-<html>
-<head>
-<title>Netbanking Page</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Netbanking Page</title>
+	<link rel="stylesheet" href="banking.css">
+	</head>
 <body>
 	<h1 style="text-align:center;">My Bank</h1>
 	<hr>
@@ -18,15 +20,16 @@
 		
 		<p style="font-size: 30px;">Login Form</p>
 		<form>
-			Firstname: <input type="text" name="fname"><br>
-			Lastname: <input type="text" name="lname"><br>
-			Username: <input type="text" name="uname"><br>
-			Password: <input type="password" name="pwd"><br>
+			Firstname: <input type="text" name="fname" minLength=2><br>
+			Lastname: <input type="text" name="lname" minLength=2><br>
+			Email: <input type="email" name="uname"><br>
+			Mobile Number: <input type="number" name="mobile" minLength=10 maxLength=10><br>
+			Password: <input type="password" name="pwd" minLength=6 maxLength=10><br>
 			<br>
 			<input type="submit" value="Register">
 			<input type="reset" value="Reset">
 		</form>
-		<a href="netbanking.html">Login Here</a>
+		<a class="btn-link" href="netbanking.html">Login Here</a>
 	</div>
 	
 	<hr style="margin-top: 200px;">
