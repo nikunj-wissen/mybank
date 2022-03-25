@@ -7,14 +7,19 @@ function calculateEMI()
 	console.log("amount: " + amount + "  && roi: " + roi + " && tenure: " + tenure)
 	
 	roi /= 1200;
+	tenure *= 12;
 	
 	var emi = amount * roi * Math.pow(1 + roi, tenure) / ((Math.pow(1 + roi, tenure)) - 1);		 // E = P x r x ( 1 + r )n / ( ( 1 + r )n - 1 )
 	
 	console.log("EMI: " + emi);
 	emi = emi.toFixed(2);
 	
+	var finalAmount = emi * tenure;
+	finalAmount = finalAmount.toFixed(2);
+	
 	document.getElementById("finalValue").innerText = "EMI: " + emi + " Rs.";
-	//alert("EMI: " + emi + " Rs.");
+	document.getElementById("finalAmount").innerText = "Total Amount to Pay: " + finalAmount + " Rs.";
+	//alert("EMI: " + emi + " Rs."); 
 }
 
 function setLoanType(loanType)
