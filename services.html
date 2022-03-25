@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<title>Services Page</title>
-	<link rel="stylesheet" href="banking.css">
+		<title>Services Page</title>
+		<link rel="stylesheet" href="banking.css">
+		<style>
+			body {
+				background-image: url("bg.jpg");
+				background-repeat: no-repeat;
+				background-position: left;
+			}
+		</style>
+		<script src="services.js"></script>
 	</head>
 <body>
 	<h1 style="text-align:center;">My Bank</h1>
@@ -16,12 +24,47 @@
 	</div>
 	
 	<hr style="margin-top: 50px;">
-	<div style="text-align: center; font-size: 20px; margin-top: 200px; margin-left: 50px; margin-right: 50px;">
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<div style="font-size: 20px; margin-left: 50px; margin-right: 50px;">
+		<h1>Loan EMI Calculator</h1>
+		<form name="loanForm" onsubmit="calculateEMI(); return false;">
+		<table>
+			<tr>
+				<td>Applicant</td>
+				<td><input type="text" name="applicantName" placeholder="Enter your name here" required></input></td>
+			</tr>
+			<tr>
+				<td>Amount</td>
+				<td><input type="number" id="amount" name="loanAmount" placeholder="Required loan amount" required></input></td>
+			</tr>
+			<tr>
+				<td>Loan Type</td>
+				<td>
+					<select id="loanTypes" onchange="setLoanType(this.value)">
+						<option name="homeLoan" value="Home_Loan">Home Loan</option>
+						<option name="carLoan" value="Car_Loan">Car Loan</option>
+						<option name="personalLoan" value="Personal_Loan">Personal Loan</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>ROI (%)</td>
+				<td><span id="roi" style="color: green;">7</span></td>
+			</tr>
+			<tr>
+				<td>Tenure</td>
+				<td><input type="number" name="tenure" id="tenure" placeholder="Years" min="1" max="25" required></input></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" name="btn-calc" value="Calculate EMI">
+		<input type="reset" value="reset">
+		</form>
+		
+		<h3><span id="finalValue"></span></h3>
+		
+		<br>
+		<a href="deposit.html">Deposit Calculator</a>
+		
 	</div>
 	
 	<hr style="margin-top: 200px;">

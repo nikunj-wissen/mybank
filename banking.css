@@ -1,12 +1,14 @@
 body {
-	background: #d2dfed;
-	background: -moz-linear-gradient(top,  #d2dfed 0%, #c8d7eb 26%, #bed0ea 51%, #a6c0e3 51%, #afc7e8 62%, #bad0ef 75%, #99b5db 88%, #799bc8 100%);
-	background: -webkit-linear-gradient(top,  #d2dfed 0%,#c8d7eb 26%,#bed0ea 51%,#a6c0e3 51%,#afc7e8 62%,#bad0ef 75%,#99b5db 88%,#799bc8 100%);
-	background: linear-gradient(to bottom,  #d2dfed 0%,#c8d7eb 26%,#bed0ea 51%,#a6c0e3 51%,#afc7e8 62%,#bad0ef 75%,#99b5db 88%,#799bc8 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2dfed', endColorstr='#799bc8',GradientType=0 );
+	background-image: url("bank.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #900C3F;
 }
 
-input[type=submit], input[type=reset] {
+input[type=submit], input[type=reset], input[type=button] {
 	background-color: #4CAF50;
 	border: none;
 	color: white;
@@ -34,4 +36,8 @@ input[type=submit], input[type=reset] {
 
 h1 {
 	color: #6e7837;
+}
+
+::placeholder {
+	font-style: italic;
 }
